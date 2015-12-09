@@ -23,15 +23,15 @@
       </HBox>
       <HBox prefHeight="642.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
          <children>
-            <TableView fx:id="SUSTable" prefHeight="640.0" prefWidth="1678.0">
+            <TableView fx:id="SUSTable" prefHeight="640.0" prefWidth="1301.0">
               <columns>
                 <TableColumn fx:id="SUSUserIDTc" prefWidth="193.0" text="USER ID" />
                 <TableColumn fx:id="SUSUserLocTc" prefWidth="223.0" text="USER LOCATION" />
                   <TableColumn fx:id="SUSUserStatTc" minWidth="0.0" prefWidth="203.0" text="USER STATUS" />
                   <TableColumn fx:id="SUSTourIDTc" prefWidth="140.0" text="TOUR ID" />
-                  <TableColumn fx:id="SUSFinalDestinationTc" prefWidth="242.0" text="FINAL DESTINATION" />
-                  <TableColumn fx:id="SUSDriverIDTc" prefWidth="141.0" text="DRIVER ID" />
-                  <TableColumn fx:id="SUSCarRegNoTc" prefWidth="223.0" text="CAR REGISTRATION NO." />
+                  <TableColumn fx:id="SUSFinalDestinationTc" prefWidth="159.0" text="FINAL DESTINATION" />
+                  <TableColumn fx:id="SUSDriverIDTc" prefWidth="186.0" text="DRIVER ID" />
+                  <TableColumn fx:id="SUSCarRegNoTc" prefWidth="196.0" text="CAR REGISTRATION NO." />
               </columns>
             </TableView>
          </children>

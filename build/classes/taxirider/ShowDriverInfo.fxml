@@ -21,22 +21,22 @@
             </Label>
          </children>
       </HBox>
-      <HBox prefHeight="642.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
+      <HBox prefHeight="639.0" prefWidth="1325.0" VBox.vgrow="ALWAYS">
          <children>
-            <TableView fx:id="SDITable" prefHeight="640.0" prefWidth="1678.0">
+            <TableView fx:id="SDITable" prefHeight="638.0" prefWidth="1301.0">
               <columns>
                 <TableColumn fx:id="SDIDriverIDTc" prefWidth="90.0" text="DRIVER ID" />
                 <TableColumn fx:id="SDINameTc" prefWidth="149.0" text="NAME" />
                   <TableColumn fx:id="SDIEmailTc" minWidth="0.0" prefWidth="128.0" text="EMAIL" />
-                  <TableColumn fx:id="SDIMobileNoTc" prefWidth="127.0" text="MOBILE NO." />
+                  <TableColumn fx:id="SDIMobileNoTc" prefWidth="127.0" text="MOBILE&#10;   NO." />
                   <TableColumn fx:id="SDILanguageTc" prefWidth="90.0" text="LANGUAGE" />
-                  <TableColumn fx:id="SDICreditCardNoTc" prefWidth="105.0" text="CREDIT CARD&#10;       NO." />
+                  <TableColumn fx:id="SDICreditCardNoTc" prefWidth="105.0" text=" CREDIT&#10;CARD NO." />
                   <TableColumn fx:id="SDICvvTc" prefWidth="90.0" text="CVV" />
                   <TableColumn fx:id="SDIExpirationDateTc" prefWidth="96.0" text="EXPIRATION&#10;     DATE" />
-                  <TableColumn fx:id="SDIAddressTc" prefWidth="150.0" text="ADDRESS" />
-                  <TableColumn fx:id="SDIDrivingLicenseTc" prefWidth="94.0" text="DRIVING&#10;LICENSE" />
+                  <TableColumn fx:id="SDIAddressTc" prefWidth="116.0" text="ADDRESS" />
+                  <TableColumn fx:id="SDIDrivingLicenseTc" prefWidth="84.0" text="DRIVING&#10;LICENSE" />
                   <TableColumn fx:id="SDICarRegNoTc" prefWidth="148.0" text="           CAR&#10;REGISTRATION NO." />
-                  <TableColumn fx:id="SDICarModelTc" prefWidth="98.0" text="CAR MODEL" />
+                  <TableColumn fx:id="SDICarModelTc" prefWidth="77.0" text="   CAR&#10;MODEL" />
               </columns>
             </TableView>
          </children>

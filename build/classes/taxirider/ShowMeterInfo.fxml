@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxirider.ShowMeterInfoController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="59.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label text="METER INFO">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="642.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="SMITable" prefHeight="640.0" prefWidth="1301.0">
+              <columns>
+                <TableColumn fx:id="SMITourIDTc" prefWidth="161.0" text="TOUR ID" />
+                <TableColumn fx:id="SMIDriverIDTc" prefWidth="141.0" text="DRIVER ID" />
+                  <TableColumn fx:id="SMICarRegNoTc" minWidth="0.0" prefWidth="189.0" text="CAR REGISTRATION NO." />
+                  <TableColumn fx:id="SMIGenCodeTc" prefWidth="176.0" text="GENERATED CODE" />
+                  <TableColumn fx:id="SMITourDistanceTc" prefWidth="159.0" text="TOUR DISTANCE" />
+                  <TableColumn fx:id="SMIIdleTimeTc" prefWidth="149.0" text="IDLE TIME" />
+                  <TableColumn fx:id="SMIEndTimeTc" prefWidth="218.0" text="END TIME" />
+                  <TableColumn fx:id="SMIAmountTc" prefWidth="107.0" text="AMOUNT" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="73.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="SMIBackButt" mnemonicParsing="false" onAction="#SMIBackButtClick" style="-fx-background-color: #252AC2;" text="BACK" textFill="WHITE">
+               <effect>
+                  <Reflection />
+               </effect>
+            </Button>
+         </children>
+         <padding>
+            <Insets right="15.0" />
+         </padding></HBox>
+   </children>
+</VBox>

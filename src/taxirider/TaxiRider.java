@@ -25,7 +25,7 @@ public class TaxiRider extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("UserInfoEntry.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("ShowDriverInfo.fxml"));
 
         Scene scene = new Scene(root);
         //stage.setResizable(false);

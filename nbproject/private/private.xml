@@ -3,12 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/home/razon/NetBeansProjects/TaxiRider/src/taxirider/DontDelete.java</file>
             <file>file:/home/razon/NetBeansProjects/TaxiRider/src/taxirider/UserStatusDB.java</file>
             <file>file:/home/razon/NetBeansProjects/TaxiRider/src/taxirider/ShowUserInfoController.java</file>
             <file>file:/home/razon/NetBeansProjects/TaxiRider/src/taxirider/TaxiRider.java</file>
             <file>file:/home/razon/NetBeansProjects/TaxiRider/src/taxirider/ShowDriverInfo.fxml</file>
             <file>file:/home/razon/NetBeansProjects/TaxiRider/src/taxirider/UserInfoEntryController.java</file>
+=======
+            <file>file:/home/shadman264/NetBeansProjects/TaxiRider/src/taxirider/ShowDriverStatusController.java</file>
+            <file>file:/home/shadman264/NetBeansProjects/TaxiRider/src/taxirider/ShowDriverStatus.fxml</file>
+            <file>file:/home/shadman264/NetBeansProjects/TaxiRider/src/taxirider/showtourpayment.css</file>
+            <file>file:/home/shadman264/NetBeansProjects/TaxiRider/src/taxirider/ShowTourPayment.fxml</file>
+            <file>file:/home/shadman264/NetBeansProjects/TaxiRider/src/taxirider/ShowTourPaymentController.java</file>
+>>>>>>> 17433af94b4fd6cb97b46d07800277db239548d0
         </group>
     </open-files>
 </project-private>
