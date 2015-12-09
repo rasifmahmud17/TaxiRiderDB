@@ -8,10 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER" prefHeight="59.0" prefWidth="1366.0">
+      <HBox alignment="CENTER" prefHeight="59.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
          <children>
             <Label text="DRIVER INFO">
                <font>
@@ -20,5 +19,26 @@
             </Label>
          </children>
       </HBox>
+      <HBox prefHeight="642.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView prefHeight="640.0" prefWidth="1678.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="DRIVER ID" />
+                <TableColumn prefWidth="75.0" text="NAME" />
+                  <TableColumn prefWidth="75.0" text="EMAIL" />
+                  <TableColumn prefWidth="75.0" text="MOBILE NO." />
+                  <TableColumn prefWidth="75.0" text="LANGUAGE" />
+                  <TableColumn prefWidth="75.0" text="CREDIT CARD NO." />
+                  <TableColumn prefWidth="75.0" text="CVV" />
+                  <TableColumn prefWidth="146.0" text="EXPIRATION DATE" />
+                  <TableColumn prefWidth="232.0" text="ADDRESS" />
+                  <TableColumn prefWidth="143.0" text="DRIVING LICENSE" />
+                  <TableColumn prefWidth="199.0" text="CAR REGISTRATION NO." />
+                  <TableColumn prefWidth="120.0" text="CAR MODEL" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <HBox prefHeight="73.0" prefWidth="1366.0" VBox.vgrow="ALWAYS" />
    </children>
 </VBox>
