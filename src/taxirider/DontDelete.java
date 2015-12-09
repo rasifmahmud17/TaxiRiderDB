@@ -68,6 +68,7 @@ public class DontDelete {
         }
     }
 
+    // TABLE 1 CREATE
     public void createUserInfo() {
         String sql = "CREATE TABLE IF NOT EXISTS USER_INFO "
                 + "(USER_ID VARCHAR(50) PRIMARY KEY NOT NULL ," //101
@@ -84,7 +85,8 @@ public class DontDelete {
         update(sql);
 
     }
-
+    
+    // TABLE 1 INSERT
     public void insertUserInfo(UserInfoDB ob) {
         String sql = "INSERT INTO USER_INFO ("
                 + "USER_ID, "
@@ -102,6 +104,7 @@ public class DontDelete {
         update(sql);
     }
 
+    // TABLE 1 GET
     public ObservableList<UserInfoDB> getUserInfo(String sql) {                //103
         ObservableList<UserInfoDB> row = FXCollections.observableArrayList();
         try {
@@ -131,6 +134,7 @@ public class DontDelete {
 
     }
 
+    //TABLE 2 CREATE
     public void createDriverInfo() {
         String sql = "CREATE TABLE IF NOT EXISTS DRIVER_INFO "
                 + "(DRIVER_ID VARCHAR(50) NOT NULL ,"
@@ -151,13 +155,48 @@ public class DontDelete {
 
     }
 
+    //TABLE 2 INSERT
     public void insertDriverInfo(DriverInfoDB ob) {
         String sql = "INSERT INTO DRIVER_INFO "
                 + "VALUES('" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getEmail() + "','" + ob.getName() + "','" + ob.getPassword() + "','"
                 + ob.getMobileNo() + "','" + ob.getLanguage() + "','" + ob.getCreditCardNo() + "','" + ob.getCvv() + "','" + ob.getExpirationDate() + "','" + ob.getAddress() + "','" + ob.getDrivingLicense() + "','" + ob.getCarModel() + "');";
         update(sql);
     }
+    
+    //TABLE 2 GET
+    public ObservableList<DriverInfoDB> getDriverInfo(String sql) {                //103
+        ObservableList<DriverInfoDB> row = FXCollections.observableArrayList();
+        try {
+            resultSet = statement.executeQuery(sql);
+            metaData = resultSet.getMetaData();
 
+            while (resultSet.next()) {
+                DriverInfoDB ob = new DriverInfoDB(
+                        resultSet.getString("DRIVER_ID"),
+                        resultSet.getString("CAR_REG_NO"),
+                        resultSet.getString("EMAIL"),
+                        resultSet.getString("NAME"),
+                        resultSet.getString("PASSWORD"),
+                        resultSet.getString("MOBILE_NO"),
+                        resultSet.getString("LANGUAGE"),
+                        resultSet.getString("CREDIT_CARD_NO"),
+                        resultSet.getString("CVV"),
+                        resultSet.getTimestamp("EXPIRATION_DATE"),
+                        resultSet.getString("ADDRESS"),
+                        resultSet.getString("DRIVING_LICENSE"),
+                        resultSet.getString("CAR_MODEL")
+                );
+                row.addAll(ob);
+            }
+
+        } catch (Exception e) {
+
+        }
+        return row;
+
+    }
+
+    //TABLE 3 CREATE
     public void createTourInfo() {
         String sql = "CREATE TABLE IF NOT EXISTS TOUR_INFO "
                 + "(TOUR_ID INT NOT NULL AUTO_INCREMENT,"
@@ -174,6 +213,7 @@ public class DontDelete {
 
     }
 
+    //TABLE 3 INSERT
     public void insertTourInfo(TourInfoDB ob) {
         String sql = "INSERT INTO TOUR_INFO ("
                 + "USER_ID, "
@@ -185,7 +225,35 @@ public class DontDelete {
                 + " VALUES('" + ob.getUserID() + "','" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getStartTime() + "','" + ob.getFinalDestination() + "','" + ob.getPickUpPoint() + "');";
         update(sql);
     }
+    
+    //TABLE 3 GET
+    public ObservableList<TourInfoDB> getTourInfo(String sql) {                //103
+        ObservableList<TourInfoDB> row = FXCollections.observableArrayList();
+        try {
+            resultSet = statement.executeQuery(sql);
+            metaData = resultSet.getMetaData();
 
+            while (resultSet.next()) {
+                TourInfoDB ob = new TourInfoDB(
+                        resultSet.getInt("TOUR_ID"),
+                        resultSet.getString("USER_ID"),
+                        resultSet.getString("DRIVER_ID"),
+                        resultSet.getString("CAR_REG_NO"),
+                        resultSet.getTimestamp("START_TIME"),
+                        resultSet.getString("FINAL_DESTINATION"),
+                        resultSet.getString("PICK_UP_POINT")
+                );
+                row.addAll(ob);
+            }
+
+        } catch (Exception e) {
+
+        }
+        return row;
+
+    }
+
+    //TABLE 4 CREATe
     public void createDriverStatus() {
         String sql = "CREATE TABLE IF NOT EXISTS DRIVER_STATUS( "
                 + "DRIVER_ID VARCHAR(50) NOT NULL , "
@@ -202,6 +270,7 @@ public class DontDelete {
 
     }
 
+    //TABLE 4 INSERT
     public void insertDriverStatus(DriverStatusDB ob) {
         String sql = "INSERT INTO DRIVER_STATUS ("
                 + "DRIVER_ID, "
@@ -211,6 +280,8 @@ public class DontDelete {
                 + " VALUES('" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getDriverLocation() + "','" + ob.getDriverStatus() + "');";
         update(sql);
     }
+    
+    //TABLE 4 GET
     public ObservableList<DriverStatusDB> getDriverStatus(String sql) {                //103
         ObservableList<DriverStatusDB> row = FXCollections.observableArrayList();
         try {
@@ -236,6 +307,7 @@ public class DontDelete {
 
     }
 
+    //TABLE 5 CREATE
     public void createUserStatus() {
         String sql = "CREATE TABLE IF NOT EXISTS USER_STATUS( "
                 + "USER_ID VARCHAR(50) NOT NULL , "
@@ -253,6 +325,7 @@ public class DontDelete {
 
     }
 
+    //TABLE 5 INSERT
     public void insertUserStatus(UserStatusDB ob) {
         String sql = "INSERT INTO USER_STATUS ("
                 + "USER_ID, "
@@ -262,6 +335,7 @@ public class DontDelete {
         update(sql);
     }
 
+    //TABLE 5 GET
     public ObservableList<UserStatusDB> getUserStatus(String sql) {                //103
         ObservableList<UserStatusDB> row = FXCollections.observableArrayList();
         try {
@@ -287,6 +361,7 @@ public class DontDelete {
 
     }
 
+    //TABLE 6 CREATE
     public void createMeterInfo() {
         String sql = "CREATE TABLE IF NOT EXISTS METER_INFO( "
                 + "TOUR_ID INT NOT NULL , "
@@ -302,12 +377,16 @@ public class DontDelete {
         update(sql);
 
     }
+    
+    //TABLE 6 INSERT
     public void insertMeterInfo(MeterInfoDB ob) {
         String sql = "INSERT INTO METER_INFO "
                 + "VALUES(" + ob.getTourID() + ",'" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getGeneratedCode() + "',"
                 + ob.getTourDistance()+ "," + ob.getIdleTime() + "," + ob.getAmount() + ",'" + ob.getEndTime() + "');";
         update(sql);
     }
+    
+    //TABLE 6 GET
     public ObservableList<MeterInfoDB> getMeterInfo(String sql) {                //103
         ObservableList<MeterInfoDB> row = FXCollections.observableArrayList();
         try {
@@ -335,8 +414,7 @@ public class DontDelete {
 
     }
 
-
-
+    //TABLE 7 CREATE
     public void createTourPayment() {
         String sql = "CREATE TABLE IF NOT EXISTS TOUR_PAYMENT( "
                 + "TOUR_ID INT NOT NULL , "
@@ -349,11 +427,15 @@ public class DontDelete {
         update(sql);
 
     }
+    
+    //TABLE 7 INSERT
     public void insertTourPayment(TourPaymentDB ob) {
         String sql = "INSERT INTO TOUR_PAYMENT "
                 + "VALUES(" + ob.getTourID() + ",'" + ob.getUserID() + "','" + ob.getGeneratedCode() + "','" + ob.getPaymentType() + "'," + ob.getAmount() + ");";
         update(sql);
     }
+    
+    //TABLE 7 GET
     public ObservableList<TourPaymentDB> getTourPayment(String sql) {                //103
         ObservableList<TourPaymentDB> row = FXCollections.observableArrayList();
         try {
@@ -377,7 +459,6 @@ public class DontDelete {
         return row;
 
     }
-
 
     public void update(String sql) {
         //connectDatabase();
