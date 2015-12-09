@@ -21,12 +21,6 @@ import javafx.collections.ObservableList;
  *
  * @author razon
  */
-
-
-
-
-
-
 public class DontDelete {
 
     private Connection connection;
@@ -39,11 +33,10 @@ public class DontDelete {
 
     }
 
-
     public void connectDatabase() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/taxidatabase", "root", "nt");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/taxidatabase", "root", "123456");
 
             statement = connection.createStatement();
 
@@ -52,8 +45,6 @@ public class DontDelete {
         }
         System.out.println("database connected_razon");
     }
-
-
 
     public void closeDatabase() {
 
@@ -93,7 +84,6 @@ public class DontDelete {
         update(sql);
 
     }
-
 
     public void insertUserInfo(UserInfoDB ob) {
         String sql = "INSERT INTO USER_INFO ("
@@ -141,6 +131,87 @@ public class DontDelete {
 
     }
 
+    public void createDriverInfo() {
+        String sql = "CREATE TABLE IF NOT EXISTS DRIVER_INFO "
+                + "(DRIVER_ID VARCHAR(50) NOT NULL ,"
+                + "CAR_REG_NO VARCHAR(50) NOT NULL ,"
+                + " EMAIL VARCHAR(50) NOT NULL , "
+                + " NAME VARCHAR(50) NOT NULL , "
+                + " PASSWORD VARCHAR(50) NOT NULL , "
+                + " MOBILE_NO VARCHAR(50) NOT NULL , "
+                + " LANGUAGE VARCHAR(50) , "
+                + " CREDIT_CARD_NO VARCHAR(50) NOT NULL , "
+                + " CVV VARCHAR(50) NOT NULL , "
+                + " EXPIRATION_DATE DATETIME NOT NULL , "
+                + " ADDRESS VARCHAR(255) NOT NULL, "
+                + " DRIVING_LICENSE VARCHAR(255) NOT NULL, "
+                + " CAR_MODEL VARCHAR(50),"
+                + " PRIMARY KEY (DRIVER_ID , CAR_REG_NO ) ) ";
+        update(sql);
+
+    }
+
+    public void insertDriverInfo(DriverInfoDB ob) {
+        String sql = "INSERT INTO DRIVER_INFO "
+                + "VALUES('" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getEmail() + "','" + ob.getName() + "','" + ob.getPassword() + "','"
+                + ob.getMobileNo() + "','" + ob.getLanguage() + "','" + ob.getCreditCardNo() + "','" + ob.getCvv() + "','" + ob.getExpirationDate() + "','" + ob.getAddress() + "','" + ob.getDrivingLicense() + "','" + ob.getCarModel() + "');";
+        update(sql);
+    }
+
+    public void createTourInfo() {
+        String sql = "CREATE TABLE IF NOT EXISTS TOUR_INFO "
+                + "(TOUR_ID INT NOT NULL AUTO_INCREMENT,"
+                + "USER_ID VARCHAR(50) NOT NULL ,"
+                + "DRIVER_ID VARCHAR(50) NOT NULL ,"
+                + "CAR_REG_NO VARCHAR(50) NOT NULL ,"
+                + "START_TIME DATETIME NOT NULL , "
+                + "FINAL_DESTINATION VARCHAR(50) , "
+                + "PICK_UP_POINT VARCHAR(50) NOT NULL , "
+                + "PRIMARY KEY (TOUR_ID ),"
+                + "FOREIGN KEY (USER_ID) REFERENCES USER_INFO(USER_ID) ON DELETE CASCADE ON UPDATE CASCADE ,"
+                + "FOREIGN KEY ( DRIVER_ID, CAR_REG_NO) REFERENCES DRIVER_INFO( DRIVER_ID , CAR_REG_NO ) ON DELETE CASCADE ON UPDATE CASCADE) ";
+        update(sql);
+
+    }
+
+    public void insertTourInfo(TourInfoDB ob) {
+        String sql = "INSERT INTO TOUR_INFO ("
+                + "USER_ID, "
+                + "DRIVER_ID, "
+                + "CAR_REG_NO, "
+                + "START_TIME, "
+                + "FINAL_DESTINATION, "
+                + "PICK_UP_POINT)"
+                + " VALUES('" + ob.getUserID() + "','" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getStartTime() + "','" + ob.getFinalDestination() + "','" + ob.getPickUpPoint() + "');";
+        update(sql);
+    }
+
+    public void createDriverStatus() {
+        String sql = "CREATE TABLE IF NOT EXISTS DRIVER_STATUS( "
+                + "DRIVER_ID VARCHAR(50) NOT NULL , "
+                + "CAR_REG_NO VARCHAR(50) , "
+                + "DRIVER_LOCATION VARCHAR(50) , "
+                + "DRIVER_STATUS VARCHAR(50), "
+                + "TOUR_ID INT, "
+                + "USER_ID VARCHAR(50), "
+                + "PRIMARY KEY (DRIVER_ID,CAR_REG_NO) ,"
+                + "FOREIGN KEY (USER_ID) REFERENCES USER_INFO(USER_ID) ON DELETE SET NULL ON UPDATE CASCADE ,"
+                + "FOREIGN KEY ( DRIVER_ID, CAR_REG_NO) REFERENCES DRIVER_INFO( DRIVER_ID , CAR_REG_NO ) ON DELETE CASCADE ON UPDATE CASCADE,"
+                + "FOREIGN KEY (TOUR_ID) REFERENCES TOUR_INFO(TOUR_ID) ON DELETE SET NULL ON UPDATE CASCADE )  ";
+        update(sql);
+
+    }
+
+    public void insertDriverStatus(DriverStatusDB ob) {
+        String sql = "INSERT INTO DRIVER_STATUS ("
+                + "DRIVER_ID, "
+                + "CAR_REG_NO, "
+                + "DRIVER_LOCATION, "
+                + "DRIVER_STATUS)"
+                + " VALUES('" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getDriverLocation() + "','" + ob.getDriverStatus() + "');";
+        update(sql);
+    }
+
     public void createUserStatus() {
         String sql = "CREATE TABLE IF NOT EXISTS USER_STATUS( "
                 + "USER_ID VARCHAR(50) NOT NULL , "
@@ -153,7 +224,6 @@ public class DontDelete {
                 + "PRIMARY KEY (USER_ID) ,"
                 + "FOREIGN KEY (USER_ID) REFERENCES USER_INFO(USER_ID) ON DELETE CASCADE ON UPDATE CASCADE ,"
                 + "FOREIGN KEY ( DRIVER_ID, CAR_REG_NO) REFERENCES DRIVER_INFO( DRIVER_ID , CAR_REG_NO ) ON DELETE SET NULL ON UPDATE CASCADE,"
-                
                 + "FOREIGN KEY (TOUR_ID) REFERENCES TOUR_INFO(TOUR_ID) ON DELETE SET NULL ON UPDATE CASCADE )  ";
         update(sql);
 
@@ -193,43 +263,33 @@ public class DontDelete {
 
     }
 
-    public void createDriverInfo() {
-        String sql = "CREATE TABLE IF NOT EXISTS DRIVER_INFO "
-                + "(DRIVER_ID VARCHAR(50) NOT NULL ,"
-                + "CAR_REG_NO VARCHAR(50) NOT NULL ,"
-                + " EMAIL VARCHAR(50) NOT NULL , "
-                + " NAME VARCHAR(50) NOT NULL , "
-                + " PASSWORD VARCHAR(50) NOT NULL , "
-                + " MOBILE_NO VARCHAR(50) NOT NULL , "
-                + " LANGUAGE VARCHAR(50) , "
-                + " CREDIT_CARD_NO VARCHAR(50) NOT NULL , "
-                + " CVV VARCHAR(50) NOT NULL , "
-                + " EXPIRATION_DATE DATETIME NOT NULL , "
-                + " ADDRESS VARCHAR(255) NOT NULL, "
-                + " DRIVING_LICENSE VARCHAR(255) NOT NULL, "
-                + " CAR_MODEL VARCHAR(50),"
-                + " PRIMARY KEY (DRIVER_ID , CAR_REG_NO ) ) ";
+    public void createMeterInfo() {
+        String sql = "CREATE TABLE IF NOT EXISTS METER_INFO( "
+                + "TOUR_ID INT NOT NULL , "
+                + "DRIVER_ID VARCHAR(50) NOT NULL, "
+                + "CAR_REG_NO VARCHAR(50) NOT NULL , "
+                + "GENERATED_CODE VARCHAR(50) NOT NULL, "
+                + "TOUR_DISTANCE DOUBLE NOT NULL, "
+                + "IDLE_TIME DOUBLE NOT NULL, "
+                + "AMOUNT DOUBLE NOT NULL, "
+                + "PRIMARY KEY (TOUR_ID) ,"
+                + "FOREIGN KEY (TOUR_ID) REFERENCES TOUR_INFO(TOUR_ID) ON DELETE CASCADE ON UPDATE CASCADE )";
         update(sql);
 
     }
-    public void createTourInfo(){
-          String sql = "CREATE TABLE IF NOT EXISTS TOUR_INFO "
-                + "(TOUR_ID INT NOT NULL ,"
-                + "USER_ID VARCHAR(50) NOT NULL ,"
-                + "DRIVER_ID VARCHAR(50) NOT NULL ,"
-                + "CAR_REG_NO VARCHAR(50) NOT NULL ,"
-                + "START_TIME DATETIME NOT NULL , "
-                + "FINAL_DESTINATION VARCHAR(50) , "
-                + "PICK_UP_POINT VARCHAR(50) NOT NULL , "   
-                + "PRIMARY KEY (TOUR_ID ),"
-                + "FOREIGN KEY (USER_ID) REFERENCES USER_INFO(USER_ID) ON DELETE CASCADE ON UPDATE CASCADE ,"
-                + "FOREIGN KEY ( DRIVER_ID, CAR_REG_NO) REFERENCES DRIVER_INFO( DRIVER_ID , CAR_REG_NO ) ON DELETE CASCADE ON UPDATE CASCADE) ";
-        update(sql);
-  
-    }
 
-    
-    
+    public void createTourPayment() {
+        String sql = "CREATE TABLE IF NOT EXISTS TOUR_PAYMENT( "
+                + "TOUR_ID INT NOT NULL , "
+                + "USER_ID VARCHAR(50) NOT NULL, "
+                + "GENERATED_CODE VARCHAR(50) NOT NULL, "
+                + "PAYMENT_TYPE VARCHAR(50) NOT NULL, "
+                + "AMOUNT DOUBLE NOT NULL, "
+                + "PRIMARY KEY (TOUR_ID) ,"
+                + "FOREIGN KEY (TOUR_ID) REFERENCES TOUR_INFO(TOUR_ID) ON DELETE CASCADE ON UPDATE CASCADE )";
+        update(sql);
+
+    }
 
     public void update(String sql) {
         //connectDatabase();
@@ -244,6 +304,5 @@ public class DontDelete {
         //closeDatabase();
 
     }
-
 
 }

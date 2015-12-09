@@ -46,6 +46,9 @@ public class TaxiRider extends Application {
         dontDelete.createDriverInfo();
         dontDelete.createTourInfo();
         dontDelete.createUserStatus();
+        dontDelete.createDriverStatus();
+        dontDelete.createMeterInfo();
+        dontDelete.createTourPayment();
         ObservableList<UserInfoDB> row = FXCollections.observableArrayList();
         row = dontDelete.getUserInfo("SELECT * FROM USER_INFO;");
         printElements(row);
