@@ -272,11 +272,19 @@ public class DontDelete {
                 + "TOUR_DISTANCE DOUBLE NOT NULL, "
                 + "IDLE_TIME DOUBLE NOT NULL, "
                 + "AMOUNT DOUBLE NOT NULL, "
+                + "END_TIME DATETIME NOT NULL, "
                 + "PRIMARY KEY (TOUR_ID) ,"
                 + "FOREIGN KEY (TOUR_ID) REFERENCES TOUR_INFO(TOUR_ID) ON DELETE CASCADE ON UPDATE CASCADE )";
         update(sql);
 
     }
+    public void insertMeterInfo(MeterInfoDB ob) {
+        String sql = "INSERT INTO METER_INFO "
+                + "VALUES('" + ob.getTourID() + "','" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getGeneratedCode() + "',"
+                + ob.getTourDistance()+ "," + ob.getIdleTime() + "," + ob.getAmount() + ",'" + ob.getEndTime() + "');";
+        update(sql);
+    }
+
 
     public void createTourPayment() {
         String sql = "CREATE TABLE IF NOT EXISTS TOUR_PAYMENT( "
