@@ -225,11 +225,7 @@ public class DontDelete {
                 + "FOREIGN KEY (USER_ID) REFERENCES USER_INFO(USER_ID) ON DELETE CASCADE ON UPDATE CASCADE ,"
                 + "FOREIGN KEY ( DRIVER_ID, CAR_REG_NO) REFERENCES DRIVER_INFO( DRIVER_ID , CAR_REG_NO ) ON DELETE CASCADE ON UPDATE CASCADE) ";
         update(sql);
-
-      
-    
-    
-    
+  
     }
 
     
