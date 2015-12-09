@@ -14,7 +14,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="59.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
          <children>
-            <Label text="TOUR PAYMENT">
+            <Label text="TOUR INFO">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -25,11 +25,13 @@
          <children>
             <TableView fx:id="STITable" prefHeight="640.0" prefWidth="1301.0" HBox.hgrow="ALWAYS">
               <columns>
-                <TableColumn fx:id="STITourIDTc" prefWidth="213.0" text="TOUR ID" />
-                <TableColumn fx:id="STIUserIDTc" prefWidth="235.0" text="USER ID" />
-                  <TableColumn fx:id="STIGenCodeTc" minWidth="0.0" prefWidth="365.0" text="GENERATED CODE" />
-                  <TableColumn fx:id="STIPaymentTypeTc" prefWidth="231.0" text="PAYMENT TYPE" />
-                  <TableColumn fx:id="STIAmountTc" prefWidth="256.0" text="AMOUNT" />
+                <TableColumn fx:id="STITourIDTc" prefWidth="164.0" text="TOUR ID" />
+                  <TableColumn fx:id="STIUserIDTc" prefWidth="153.0" text="USER ID" />
+                <TableColumn fx:id="STIDriverIDTc" prefWidth="159.0" text="DRIVER ID" />
+                  <TableColumn fx:id="STICarRegNoTc" minWidth="0.0" prefWidth="243.0" text="CAR REGISTRATION NO." />
+                  <TableColumn fx:id="STIStartTimeTc" prefWidth="201.0" text="START TIME" />
+                  <TableColumn fx:id="STIFinalDestinationTc" prefWidth="192.0" text="FINAL DESTINATION" />
+                  <TableColumn fx:id="STIPickUpPointTc" prefWidth="202.0" text="PICK-UP POINT" />
               </columns>
             </TableView>
          </children>

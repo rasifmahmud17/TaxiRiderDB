@@ -27,23 +27,24 @@ public class ShowTourInfoController implements Initializable {
     private TableColumn<TourInfoDB, Integer> STITourIDTc;
     @FXML
     private TableColumn<TourInfoDB, String> STIUserIDTc;
+    @FXML
     private TableColumn<TourInfoDB, String> STIDriverIDTc;
+    @FXML
     private TableColumn<TourInfoDB, String> STICarRegNoTc;
+    @FXML
     private TableColumn<TourInfoDB, String> STIStartTimeTc;
-    private TableColumn<TourInfoDB, String> STIPickupPointTc;
+    @FXML
     private TableColumn<TourInfoDB, String> STIFinalDestinationTc;
+    @FXML
+    private TableColumn<TourInfoDB, String> STIPickUpPointTc;
+    
     @FXML
     private TableView<TourInfoDB> STITable;
     
     ObservableList<TourInfoDB> STIData =FXCollections.observableArrayList();
     @FXML
     private Button STIBackButt;
-    @FXML
-    private TableColumn<?, ?> STIGenCodeTc;
-    @FXML
-    private TableColumn<?, ?> STIPaymentTypeTc;
-    @FXML
-    private TableColumn<?, ?> STIAmountTc;
+    
     
 
     /**
@@ -59,7 +60,7 @@ public class ShowTourInfoController implements Initializable {
         STICarRegNoTc.setCellValueFactory(new PropertyValueFactory<>("carRegNo"));
         STIDriverIDTc.setCellValueFactory(new PropertyValueFactory<>("driverID"));
         STIFinalDestinationTc.setCellValueFactory(new PropertyValueFactory<>("finalDestination"));
-        STIPickupPointTc.setCellValueFactory(new PropertyValueFactory<>("pickUpPoint"));
+        STIPickUpPointTc.setCellValueFactory(new PropertyValueFactory<>("pickUpPoint"));
         STIStartTimeTc.setCellValueFactory(new PropertyValueFactory<>("startTime"));
         STITourIDTc.setCellValueFactory(new PropertyValueFactory<>("tourID"));
         STIUserIDTc.setCellValueFactory(new PropertyValueFactory<>("userID"));

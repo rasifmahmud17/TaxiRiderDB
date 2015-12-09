@@ -23,7 +23,7 @@
       </HBox>
       <HBox prefHeight="642.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
          <children>
-            <TableView fx:id="SDSTable" prefHeight="640.0" prefWidth="1301.0">
+            <TableView fx:id="STPTable" prefHeight="640.0" prefWidth="1301.0">
               <columns>
                 <TableColumn fx:id="STPTourIDTc" prefWidth="193.0" text="TOUR ID" />
                 <TableColumn fx:id="STPUserIDTc" prefWidth="258.0" text="USER ID" />
