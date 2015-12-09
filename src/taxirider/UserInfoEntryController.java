@@ -94,19 +94,17 @@ public class UserInfoEntryController implements Initializable {
 
         dontDelete.connectDatabase();
         dontDelete.insertUserInfo(userInfoDB);
-<<<<<<< HEAD
+
         str= userInfoDB.getUserID();
         
         
         UserStatusDB userStatusDB = new UserStatusDB(str, UIEAddressTextArea.getText(), "chill");
         dontDelete.insertUserStatus(userStatusDB);
 
-        dontDelete.closeDatabase();
-=======
+
         dontDelete.closeDatabase();
         str= userInfoDB.getUserID();
 
->>>>>>> 946e6045e6b9101e06a2b5d42b14217ac833e725
         Stage stage = (Stage) UIESignUpButt.getScene().getWindow();
 
         Parent p = FXMLLoader.load(getClass().getResource("ShowUserInfo.fxml"));

@@ -21,14 +21,14 @@ import javafx.collections.ObservableList;
  *
  * @author razon
  */
-<<<<<<< HEAD
+
+
+
+
+
+
 public class DontDelete {
 
-=======
-
-
-public class DontDelete {
->>>>>>> 946e6045e6b9101e06a2b5d42b14217ac833e725
     private Connection connection;
     private Statement statement;
     private ResultSet resultSet;
@@ -38,18 +38,13 @@ public class DontDelete {
     public DontDelete() {
 
     }
-<<<<<<< HEAD
+
 
     public void connectDatabase() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/taxidatabase", "root", "123456");
-=======
-    public void connectDatabase() {
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/taxidatabase", "root", "nt");
->>>>>>> 946e6045e6b9101e06a2b5d42b14217ac833e725
+
             statement = connection.createStatement();
 
         } catch (Exception e) {
@@ -57,10 +52,9 @@ public class DontDelete {
         }
         System.out.println("database connected_razon");
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 946e6045e6b9101e06a2b5d42b14217ac833e725
+
+
     public void closeDatabase() {
 
         try {
@@ -82,11 +76,7 @@ public class DontDelete {
             exception.printStackTrace();
         }
     }
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 946e6045e6b9101e06a2b5d42b14217ac833e725
     public void createUserInfo() {
         String sql = "CREATE TABLE IF NOT EXISTS USER_INFO "
                 + "(USER_ID VARCHAR(50) PRIMARY KEY NOT NULL ," //101
@@ -104,10 +94,7 @@ public class DontDelete {
 
     }
 
-<<<<<<< HEAD
-=======
-      
->>>>>>> 946e6045e6b9101e06a2b5d42b14217ac833e725
+
     public void insertUserInfo(UserInfoDB ob) {
         String sql = "INSERT INTO USER_INFO ("
                 + "USER_ID, "
@@ -124,10 +111,7 @@ public class DontDelete {
                 + ob.getMobileNo() + "','" + ob.getLanguage() + "','" + ob.getCreditCardNo() + "','" + ob.getCvv() + "','" + ob.getExpirationDate() + "','" + ob.getPostalCode() + "');";
         update(sql);
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 946e6045e6b9101e06a2b5d42b14217ac833e725
     public ObservableList<UserInfoDB> getUserInfo(String sql) {                //103
         ObservableList<UserInfoDB> row = FXCollections.observableArrayList();
         try {
@@ -156,12 +140,7 @@ public class DontDelete {
         return row;
 
     }
-<<<<<<< HEAD
 
-=======
-    
-    
->>>>>>> 946e6045e6b9101e06a2b5d42b14217ac833e725
     public void createUserStatus() {
         String sql = "CREATE TABLE IF NOT EXISTS USER_STATUS( "
                 + "USER_ID VARCHAR(50) NOT NULL , "
@@ -169,7 +148,6 @@ public class DontDelete {
                 + "USER_STATUS VARCHAR(50), "
                 + "FINAL_DESTINATION VARCHAR(50), "
                 + "DRIVER_ID VARCHAR(50) , "
-<<<<<<< HEAD
                 + "CAR_REG_NO VARCHAR(50) , "
                 + "TOUR_ID INT, "
                 + "PRIMARY KEY (USER_ID) ,"
@@ -235,19 +213,9 @@ public class DontDelete {
 
     }
 
-=======
-                + "TOUR_ID VARCHAR(50), "
-                + "PRIMARY KEY (USER_ID) ,"
-                + "FOREIGN KEY (USER_ID) REFERENCES USER_INFO(USER_ID)) ";
-        update(sql);
-
-    }
     
     
 
-
-     
->>>>>>> 946e6045e6b9101e06a2b5d42b14217ac833e725
     public void update(String sql) {
         //connectDatabase();
 
@@ -262,9 +230,5 @@ public class DontDelete {
 
     }
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 946e6045e6b9101e06a2b5d42b14217ac833e725
 }

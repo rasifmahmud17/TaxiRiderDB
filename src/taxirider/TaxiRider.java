@@ -44,10 +44,7 @@ public class TaxiRider extends Application {
 
         dontDelete.createUserInfo();
         //dontDelete.insertUserInfo(userInfoDB);
-<<<<<<< HEAD
         dontDelete.createDriverInfo();
-=======
->>>>>>> 946e6045e6b9101e06a2b5d42b14217ac833e725
         dontDelete.createUserStatus();
         ObservableList<UserInfoDB> row = FXCollections.observableArrayList();
         row = dontDelete.getUserInfo("SELECT * FROM USER_INFO;");
