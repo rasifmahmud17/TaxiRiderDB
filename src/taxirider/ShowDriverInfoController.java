@@ -7,12 +7,15 @@ package taxirider;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -21,33 +24,35 @@ import javafx.scene.control.TableView;
  */
 public class ShowDriverInfoController implements Initializable {
     @FXML
-    private TableView<?> SDITable;
+    private TableView<DriverInfoDB> SDITable;
     @FXML
-    private TableColumn<?, ?> SDIDriverIDTc;
+    private TableColumn<DriverInfoDB, String> SDIDriverIDTc;
     @FXML
-    private TableColumn<?, ?> SDINameTc;
+    private TableColumn<DriverInfoDB, String> SDINameTc;
     @FXML
-    private TableColumn<?, ?> SDIEmailTc;
+    private TableColumn<DriverInfoDB, String> SDIEmailTc;
     @FXML
-    private TableColumn<?, ?> SDIMobileNoTc;
+    private TableColumn<DriverInfoDB, String> SDIMobileNoTc;
     @FXML
-    private TableColumn<?, ?> SDILanguageTc;
+    private TableColumn<DriverInfoDB, String> SDILanguageTc;
     @FXML
-    private TableColumn<?, ?> SDICreditCardNoTc;
+    private TableColumn<DriverInfoDB, String> SDICreditCardNoTc;
     @FXML
-    private TableColumn<?, ?> SDICvvTc;
+    private TableColumn<DriverInfoDB, String> SDICvvTc;
     @FXML
-    private TableColumn<?, ?> SDIExpirationDateTc;
+    private TableColumn<DriverInfoDB, String> SDIExpirationDateTc;
     @FXML
-    private TableColumn<?, ?> SDIAddressTc;
+    private TableColumn<DriverInfoDB, String> SDIAddressTc;
     @FXML
-    private TableColumn<?, ?> SDIDrivingLicenseTc;
+    private TableColumn<DriverInfoDB, String> SDIDrivingLicenseTc;
     @FXML
-    private TableColumn<?, ?> SDICarRegNoTc;
+    private TableColumn<DriverInfoDB, String> SDICarRegNoTc;
     @FXML
-    private TableColumn<?, ?> SDICarModelTc;
+    private TableColumn<DriverInfoDB, String> SDICarModelTc;
     @FXML
     private Button SDIBackButt;
+    
+    ObservableList<DriverInfoDB> SDIData =FXCollections.observableArrayList();
 
     /**
      * Initializes the controller class.
@@ -55,6 +60,31 @@ public class ShowDriverInfoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        DontDelete dontDelete=new DontDelete();
+        dontDelete.connectDatabase();
+        
+        //Showing on table
+        SDIAddressTc.setCellValueFactory(new PropertyValueFactory<>("address"));
+        SDICarModelTc.setCellValueFactory(new PropertyValueFactory<>("carModel"));
+        SDICarRegNoTc.setCellValueFactory(new PropertyValueFactory<>("carRegNo"));
+        SDICreditCardNoTc.setCellValueFactory(new PropertyValueFactory<>("creditCardNo"));
+        SDIDriverIDTc.setCellValueFactory(new PropertyValueFactory<>("driverID"));
+        SDIDrivingLicenseTc.setCellValueFactory(new PropertyValueFactory<>("drivingLicense"));
+        SDIExpirationDateTc.setCellValueFactory(new PropertyValueFactory<>("expirationDate"));
+        SDILanguageTc.setCellValueFactory(new PropertyValueFactory<>("language"));
+        SDIMobileNoTc.setCellValueFactory(new PropertyValueFactory<>("mobileNo"));
+        SDINameTc.setCellValueFactory(new PropertyValueFactory<>("name"));
+        SDICvvTc.setCellValueFactory(new PropertyValueFactory<>("cvv"));
+        SDIEmailTc.setCellValueFactory(new PropertyValueFactory<>("email"));
+        
+        
+        SDIData.setAll(dontDelete.getDriverInfo("SELECT * FROM DRIVER_INFO;"));
+        
+
+        
+        SDITable.setItems(SDIData);
+        
+        dontDelete.closeDatabase();
     }    
 
     @FXML

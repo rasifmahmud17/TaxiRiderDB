@@ -23,20 +23,20 @@
       </HBox>
       <HBox prefHeight="642.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
          <children>
-            <TableView fx:id="STPTable" prefHeight="640.0" prefWidth="1301.0" HBox.hgrow="ALWAYS">
+            <TableView fx:id="STITable" prefHeight="640.0" prefWidth="1301.0" HBox.hgrow="ALWAYS">
               <columns>
-                <TableColumn fx:id="STPTourIDTc" prefWidth="213.0" text="TOUR ID" />
-                <TableColumn fx:id="STPUserIDTc" prefWidth="235.0" text="USER ID" />
-                  <TableColumn fx:id="STPGenCodeTc" minWidth="0.0" prefWidth="365.0" text="GENERATED CODE" />
-                  <TableColumn fx:id="STPPaymentTypeTc" prefWidth="231.0" text="PAYMENT TYPE" />
-                  <TableColumn fx:id="STIPAmountTc" prefWidth="256.0" text="AMOUNT" />
+                <TableColumn fx:id="STITourIDTc" prefWidth="213.0" text="TOUR ID" />
+                <TableColumn fx:id="STIUserIDTc" prefWidth="235.0" text="USER ID" />
+                  <TableColumn fx:id="STIGenCodeTc" minWidth="0.0" prefWidth="365.0" text="GENERATED CODE" />
+                  <TableColumn fx:id="STIPaymentTypeTc" prefWidth="231.0" text="PAYMENT TYPE" />
+                  <TableColumn fx:id="STIAmountTc" prefWidth="256.0" text="AMOUNT" />
               </columns>
             </TableView>
          </children>
       </HBox>
       <HBox alignment="CENTER_RIGHT" prefHeight="73.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
          <children>
-            <Button fx:id="STPBackButt" mnemonicParsing="false" onAction="#STPBackButtClick" style="-fx-background-color: #252AC2;" text="BACK" textFill="WHITE">
+            <Button fx:id="STIBackButt" mnemonicParsing="false" onAction="#STIBackButtClick" style="-fx-background-color: #252AC2;" text="BACK" textFill="WHITE">
                <effect>
                   <Reflection />
                </effect>

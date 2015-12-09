@@ -21,21 +21,20 @@ import javafx.scene.control.TableView;
  */
 public class ShowTourPaymentController implements Initializable {
     @FXML
-    private TableView<?> SDSTable;
+    private TableColumn<TourPaymentDB, String> STPTourIDTc;
     @FXML
-    private TableColumn<?, ?> SDSDriverIDTc;
+    private TableColumn<TourPaymentDB, String> STPUserIDTc;
     @FXML
-    private TableColumn<?, ?> SDSCarRegNoTc;
+    private TableColumn<TourPaymentDB, String> STPGenCodeTc;
     @FXML
-    private TableColumn<?, ?> SDSDriverLocTc;
+    private TableColumn<TourPaymentDB, String> STPPaymentTypeTc;
     @FXML
-    private TableColumn<?, ?> SDSDriverStatusTc;
+    private TableColumn<TourPaymentDB, Double> STPAmountTc;
     @FXML
-    private TableColumn<?, ?> SDSUserIDTc;
+    private Button STPBackButt;
     @FXML
-    private TableColumn<?, ?> SDSTourIDTc;
-    @FXML
-    private Button SDSBackButt;
+    private TableView<TourPaymentDB> SDSTable;
+    
 
     /**
      * Initializes the controller class.
@@ -46,7 +45,7 @@ public class ShowTourPaymentController implements Initializable {
     }    
 
     @FXML
-    private void SDSBackButtClick(ActionEvent event) {
+    private void STPBackButtClick(ActionEvent event) {
     }
     
 }

@@ -25,7 +25,7 @@ public class TaxiRider extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("ShowDriverInfo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("ShowUserStatus.fxml"));
 
         Scene scene = new Scene(root);
         //stage.setResizable(false);
@@ -38,7 +38,7 @@ public class TaxiRider extends Application {
     public static void main(String[] args) {
         // TODO code application logic here
         java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime());
-        UserInfoDB userInfoDB = new UserInfoDB("shadman266", "shadman266@gmail.com", "Shadman Mahdi", "123456", "01711038706", "Bangla", "123456789", "123456789", date, "1219");
+        //UserInfoDB userInfoDB = new UserInfoDB("shadman266", "shadman266@gmail.com", "Shadman Mahdi", "123456", "01711038706", "Bangla", "123456789", "123456789", date, "1219");
         DontDelete dontDelete = new DontDelete();
         dontDelete.connectDatabase();
 
@@ -49,20 +49,25 @@ public class TaxiRider extends Application {
         dontDelete.createDriverStatus();
         dontDelete.createMeterInfo();
         dontDelete.createTourPayment();
-        ObservableList<UserInfoDB> row = FXCollections.observableArrayList();
-        row = dontDelete.getUserInfo("SELECT * FROM USER_INFO;");
-        printElements(row);
+        //ObservableList<UserInfoDB> row = FXCollections.observableArrayList();
+        //row = dontDelete.getUserInfo("SELECT * FROM USER_INFO;");
+        //printElements(row);
 
         dontDelete.closeDatabase();
         launch(args);
     }
 
-    private static void printElements(ObservableList<UserInfoDB> list) {
+    public static void printElements(ObservableList<MeterInfoDB> list) {
         System.out.println("Size: " + list.size());
-        for (UserInfoDB o : list) {
-            System.out.print(o.getName());
-            System.out.print(" " + o.getPassword());
-            System.out.println(" " + o.getPostalCode());
+        for (MeterInfoDB o : list) {
+            System.out.println("\n1.\t" +o.getTourID());
+            System.out.println("2.\t" + o.getDriverID());
+            System.out.println("3.\t" + o.getCarRegNo());
+            System.out.println("4.\t" + o.getGeneratedCode());
+            System.out.println("5.\t" + o.getTourDistance());
+            System.out.println("6.\t" + o.getIdleTime());
+            System.out.println("7.\t" + o.getAmount());
+            System.out.println("8.\t" + o.getEndTime());
         }
         System.out.println("");
     }

@@ -36,7 +36,7 @@ public class DontDelete {
     public void connectDatabase() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/taxidatabase", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/taxidatabase", "root", "nt");
 
             statement = connection.createStatement();
 
