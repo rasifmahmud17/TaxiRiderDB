@@ -94,6 +94,7 @@ public class MeterInfoDB {
         this.idleTime = idleTime;
         this.amount = amount;
         this.endTime = endTime;
+       
     }
 
     public MeterInfoDB() {

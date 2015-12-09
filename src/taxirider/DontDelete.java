@@ -211,6 +211,30 @@ public class DontDelete {
                 + " VALUES('" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getDriverLocation() + "','" + ob.getDriverStatus() + "');";
         update(sql);
     }
+    public ObservableList<DriverStatusDB> getDriverStatus(String sql) {                //103
+        ObservableList<DriverStatusDB> row = FXCollections.observableArrayList();
+        try {
+            resultSet = statement.executeQuery(sql);
+            metaData = resultSet.getMetaData();
+
+            while (resultSet.next()) {
+                DriverStatusDB ob = new DriverStatusDB(
+                        resultSet.getString("DRIVER_ID"),
+                        resultSet.getString("CAR_REG_NO"),
+                        resultSet.getString("DRIVER_LOCATION"),
+                        resultSet.getString("DRIVER_STATUS"),
+                        resultSet.getInt("TOUR_ID"),
+                        resultSet.getString("USER_ID")
+                );
+                row.addAll(ob);
+            }
+
+        } catch (Exception e) {
+
+        }
+        return row;
+
+    }
 
     public void createUserStatus() {
         String sql = "CREATE TABLE IF NOT EXISTS USER_STATUS( "
@@ -268,7 +292,7 @@ public class DontDelete {
                 + "TOUR_ID INT NOT NULL , "
                 + "DRIVER_ID VARCHAR(50) NOT NULL, "
                 + "CAR_REG_NO VARCHAR(50) NOT NULL , "
-                + "GENERATED_CODE VARCHAR(50) NOT NULL, "
+                + "GENERATED_CODE VARCHAR(50) , "
                 + "TOUR_DISTANCE DOUBLE NOT NULL, "
                 + "IDLE_TIME DOUBLE NOT NULL, "
                 + "AMOUNT DOUBLE NOT NULL, "
@@ -280,17 +304,44 @@ public class DontDelete {
     }
     public void insertMeterInfo(MeterInfoDB ob) {
         String sql = "INSERT INTO METER_INFO "
-                + "VALUES('" + ob.getTourID() + "','" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getGeneratedCode() + "',"
+                + "VALUES(" + ob.getTourID() + ",'" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getGeneratedCode() + "',"
                 + ob.getTourDistance()+ "," + ob.getIdleTime() + "," + ob.getAmount() + ",'" + ob.getEndTime() + "');";
         update(sql);
     }
+    public ObservableList<MeterInfoDB> getMeterInfo(String sql) {                //103
+        ObservableList<MeterInfoDB> row = FXCollections.observableArrayList();
+        try {
+            resultSet = statement.executeQuery(sql);
+            metaData = resultSet.getMetaData();
+
+            while (resultSet.next()) {
+                MeterInfoDB ob = new MeterInfoDB(
+                        resultSet.getInt("TOUR_ID"),
+                        resultSet.getString("DRIVER_ID"),
+                        resultSet.getString("CAR_REG_NO"),
+                        resultSet.getString("GENERATED_CODE"),
+                        resultSet.getDouble("TOUR_DISTANCE"),
+                        resultSet.getDouble("IDLE_TIME"),
+                        resultSet.getDouble("AMOUNT"),
+                        resultSet.getTimestamp("END_TIME")
+                );
+                row.addAll(ob);
+            }
+
+        } catch (Exception e) {
+
+        }
+        return row;
+
+    }
+
 
 
     public void createTourPayment() {
         String sql = "CREATE TABLE IF NOT EXISTS TOUR_PAYMENT( "
                 + "TOUR_ID INT NOT NULL , "
                 + "USER_ID VARCHAR(50) NOT NULL, "
-                + "GENERATED_CODE VARCHAR(50) NOT NULL, "
+                + "GENERATED_CODE VARCHAR(50), "
                 + "PAYMENT_TYPE VARCHAR(50) NOT NULL, "
                 + "AMOUNT DOUBLE NOT NULL, "
                 + "PRIMARY KEY (TOUR_ID) ,"
@@ -298,6 +349,35 @@ public class DontDelete {
         update(sql);
 
     }
+    public void insertTourPayment(TourPaymentDB ob) {
+        String sql = "INSERT INTO TOUR_PAYMENT "
+                + "VALUES(" + ob.getTourID() + ",'" + ob.getUserID() + "','" + ob.getGeneratedCode() + "','" + ob.getPaymentType() + "'," + ob.getAmount() + ");";
+        update(sql);
+    }
+    public ObservableList<TourPaymentDB> getTourPayment(String sql) {                //103
+        ObservableList<TourPaymentDB> row = FXCollections.observableArrayList();
+        try {
+            resultSet = statement.executeQuery(sql);
+            metaData = resultSet.getMetaData();
+
+            while (resultSet.next()) {
+                TourPaymentDB ob = new TourPaymentDB(
+                        resultSet.getInt("TOUR_ID"),
+                        resultSet.getString("USER_ID"),
+                        resultSet.getString("GENERATED_CODE"),
+                        resultSet.getString("PAYMENT_TYPE"),
+                        resultSet.getDouble("AMOUNT")
+                );
+                row.addAll(ob);
+            }
+
+        } catch (Exception e) {
+
+        }
+        return row;
+
+    }
+
 
     public void update(String sql) {
         //connectDatabase();
