@@ -212,6 +212,25 @@ public class DontDelete {
         update(sql);
 
     }
+    public void createTourInfo(){
+          String sql = "CREATE TABLE IF NOT EXISTS TOUR_INFO "
+                + "(TOUR_ID INT NOT NULL ,"
+                + "USER_ID VARCHAR(50) NOT NULL ,"
+                + "DRIVER_ID VARCHAR(50) NOT NULL ,"
+                + "CAR_REG_NO VARCHAR(50) NOT NULL ,"
+                + "START_TIME DATETIME NOT NULL , "
+                + "FINAL_DESTINATION VARCHAR(50) , "
+                + "PICK_UP_POINT VARCHAR(50) NOT NULL , "   
+                + "PRIMARY KEY (TOUR_ID ),"
+                + "FOREIGN KEY (USER_ID) REFERENCES USER_INFO(USER_ID) ON DELETE CASCADE ON UPDATE CASCADE ,"
+                + "FOREIGN KEY ( DRIVER_ID, CAR_REG_NO) REFERENCES DRIVER_INFO( DRIVER_ID , CAR_REG_NO ) ON DELETE CASCADE ON UPDATE CASCADE) ";
+        update(sql);
+
+      
+    
+    
+    
+    }
 
     
     
