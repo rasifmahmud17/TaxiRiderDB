@@ -19,35 +19,25 @@ import javafx.scene.control.TableView;
  *
  * @author shadman264
  */
-public class ShowDriverInfoController implements Initializable {
+public class ShowTourInfoController implements Initializable {
     @FXML
-    private TableView<?> SDITable;
+    private TableColumn<?, ?> STITourIDTc;
     @FXML
-    private TableColumn<?, ?> SDIDriverIDTc;
+    private TableColumn<?, ?> STIUserIDTc;
     @FXML
-    private TableColumn<?, ?> SDINameTc;
+    private TableColumn<?, ?> STIDriverIDTc;
     @FXML
-    private TableColumn<?, ?> SDIEmailTc;
+    private TableColumn<?, ?> STICarRegNoTc;
     @FXML
-    private TableColumn<?, ?> SDIMobileNoTc;
+    private TableColumn<?, ?> STIStartTimeTc;
     @FXML
-    private TableColumn<?, ?> SDILanguageTc;
+    private TableColumn<?, ?> STIPickupPointTc;
     @FXML
-    private TableColumn<?, ?> SDICreditCardNoTc;
+    private TableColumn<?, ?> STIFinalDestinationTc;
     @FXML
-    private TableColumn<?, ?> SDICvvTc;
+    private Button STIBackButt;
     @FXML
-    private TableColumn<?, ?> SDIExpirationDateTc;
-    @FXML
-    private TableColumn<?, ?> SDIAddressTc;
-    @FXML
-    private TableColumn<?, ?> SDIDrivingLicenseTc;
-    @FXML
-    private TableColumn<?, ?> SDICarRegNoTc;
-    @FXML
-    private TableColumn<?, ?> SDICarModelTc;
-    @FXML
-    private Button SDIBackButt;
+    private TableView<?> STITable;
 
     /**
      * Initializes the controller class.
@@ -58,7 +48,7 @@ public class ShowDriverInfoController implements Initializable {
     }    
 
     @FXML
-    private void SDIBackButtClick(ActionEvent event) {
+    private void STIBackButtClick(ActionEvent event) {
     }
     
 }

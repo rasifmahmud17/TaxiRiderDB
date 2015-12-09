@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -10,252 +10,44 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="766.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxirider.ShowUserInfoController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxirider.ShowUserInfoController">
    <children>
-      <HBox alignment="CENTER" prefHeight="52.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
+      <HBox alignment="CENTER" prefHeight="59.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
          <children>
-            <Label text="USER INFORMATION" HBox.hgrow="ALWAYS">
+            <Label text="USER INFO">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
          </children>
       </HBox>
-      <HBox prefHeight="608.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
+      <HBox prefHeight="642.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-               <children>
-                  <VBox prefHeight="65.0" prefWidth="342.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label alignment="TOP_LEFT" prefHeight="65.0" prefWidth="349.0" text="USER ID                                        :" VBox.vgrow="ALWAYS">
-                           <padding>
-                              <Insets left="15.0" top="40.0" />
-                           </padding>
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label alignment="TOP_LEFT" prefHeight="65.0" prefWidth="507.0" text="NAME                                           :" VBox.vgrow="ALWAYS">
-                           <padding>
-                              <Insets left="15.0" top="40.0" />
-                           </padding>
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label alignment="TOP_LEFT" prefHeight="65.0" prefWidth="397.0" text="PASSWORD                                  :" VBox.vgrow="ALWAYS">
-                           <padding>
-                              <Insets left="15.0" top="40.0" />
-                           </padding>
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label alignment="TOP_LEFT" prefHeight="65.0" prefWidth="403.0" text="MOBILE NO.                                 :" VBox.vgrow="ALWAYS">
-                           <padding>
-                              <Insets left="15.0" top="40.0" />
-                           </padding>
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label alignment="TOP_LEFT" prefHeight="65.0" prefWidth="476.0" text="CREDIT CARD NO.                        :" VBox.vgrow="ALWAYS">
-                           <padding>
-                              <Insets left="15.0" top="40.0" />
-                           </padding>
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label alignment="TOP_LEFT" prefHeight="65.0" prefWidth="390.0" text="EXPIRATION DATE                       :" VBox.vgrow="ALWAYS">
-                           <padding>
-                              <Insets left="15.0" top="40.0" />
-                           </padding>
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label alignment="TOP_LEFT" prefHeight="65.0" prefWidth="349.0" text="LANGUAGE                                  :" VBox.vgrow="ALWAYS">
-                           <padding>
-                              <Insets left="15.0" top="40.0" />
-                           </padding>
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label alignment="TOP_LEFT" prefHeight="65.0" prefWidth="404.0" text="ADDRESS                                     :" VBox.vgrow="ALWAYS">
-                           <padding>
-                              <Insets left="15.0" top="10.0" />
-                           </padding>
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-               <children>
-                  <Label fx:id="SUIUserIdLabel" prefHeight="20.0" prefWidth="354.0" text="Label">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="40.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="SUINameLabel" prefHeight="20.0" prefWidth="367.0" text="Label">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="58.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="SUIPasswordLabel" prefHeight="20.0" prefWidth="357.0" text="Label">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="58.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="SUIMobileNoLabel" prefHeight="20.0" prefWidth="521.0" text="Label">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="57.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="SUICreditCardNoLabel" prefHeight="20.0" prefWidth="425.0" text="Label">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="55.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="SUIExpirationDateLabel" prefHeight="20.0" prefWidth="379.0" text="Label">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="55.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="SUILanguageLabel" prefHeight="20.0" prefWidth="429.0" text="Label">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="57.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="SUIAddressLabel" prefHeight="20.0" prefWidth="360.0" text="Label">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="27.0" />
-                     </VBox.margin>
-                  </Label>
-               </children></VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-               <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label alignment="TOP_LEFT" prefHeight="65.0" prefWidth="507.0" text="EMAIL                                         :" VBox.vgrow="ALWAYS">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                           <padding>
-                              <Insets left="15.0" top="40.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <VBox VBox.vgrow="ALWAYS">
-                           <children>
-                              <Label alignment="TOP_LEFT" prefHeight="65.0" prefWidth="390.0" text="CVV                                             :" VBox.vgrow="ALWAYS">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets left="15.0" top="40.0" />
-                                 </padding>
-                                 <VBox.margin>
-                                    <Insets left="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </VBox>
-               </children></VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-               <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label fx:id="SUIEmailLabel" prefHeight="20.0" prefWidth="350.0" text="Label">
-                           <VBox.margin>
-                              <Insets right="15.0" top="40.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label fx:id="SUICvvLabel" prefHeight="20.0" prefWidth="407.0" text="Label">
-                           <VBox.margin>
-                              <Insets right="15.0" top="40.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-               </children></VBox>
+            <TableView fx:id="SUITable" prefHeight="640.0" prefWidth="1678.0">
+              <columns>
+                <TableColumn fx:id="SUIDriverIDTc" prefWidth="112.0" text="USER ID" />
+                <TableColumn fx:id="SUDINameTc" prefWidth="220.0" text="NAME" />
+                  <TableColumn fx:id="SUIEmailTc" minWidth="0.0" prefWidth="152.0" text="EMAIL" />
+                  <TableColumn fx:id="SUIMobileNoTc" prefWidth="119.0" text="MOBILE NO." />
+                  <TableColumn fx:id="SUILanguageTc" prefWidth="99.0" text="LANGUAGE" />
+                  <TableColumn fx:id="SUICreditCardNoTc" prefWidth="161.0" text="CREDIT CARD&#10;       NO." />
+                  <TableColumn fx:id="SUICvvTc" prefWidth="129.0" text="CVV" />
+                  <TableColumn fx:id="SUIExpirationDateTc" prefWidth="126.0" text="EXPIRATION&#10;     DATE" />
+                  <TableColumn fx:id="SUIAddressTc" prefWidth="247.0" text="ADDRESS" />
+              </columns>
+            </TableView>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0" />
+      <HBox alignment="CENTER_RIGHT" prefHeight="73.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="SUIBackButt" mnemonicParsing="false" onAction="#SUIBackButtClick" style="-fx-background-color: #252AC2;" text="BACK" textFill="WHITE">
+               <effect>
+                  <Reflection />
+               </effect>
+            </Button>
+         </children>
+         <padding>
+            <Insets right="15.0" />
+         </padding></HBox>
    </children>
 </VBox>
