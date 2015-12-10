@@ -28,6 +28,7 @@ public class DontDelete {
     private ResultSet resultSet;
     private ResultSetMetaData metaData;
     private PreparedStatement preparedStatement;
+    private String sampleUpdateSql = "update CUSTOMER_LIST set TOTAL_ORDER = TOTAL_ORDER + ? , BALANCE_ORDER = BALANCE_ORDER + ? where CUSTOMER = ? AND INSTITUTE = ?";
 
     public DontDelete() {
 
@@ -36,7 +37,7 @@ public class DontDelete {
     public void connectDatabase() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/taxidatabase", "root", "nt");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/taxidatabase", "root", "123456");
 
             statement = connection.createStatement();
 
@@ -85,7 +86,7 @@ public class DontDelete {
         update(sql);
 
     }
-    
+
     // TABLE 1 INSERT
     public void insertUserInfo(UserInfoDB ob) {
         String sql = "INSERT INTO USER_INFO ("
@@ -162,7 +163,7 @@ public class DontDelete {
                 + ob.getMobileNo() + "','" + ob.getLanguage() + "','" + ob.getCreditCardNo() + "','" + ob.getCvv() + "','" + ob.getExpirationDate() + "','" + ob.getAddress() + "','" + ob.getDrivingLicense() + "','" + ob.getCarModel() + "');";
         update(sql);
     }
-    
+
     //TABLE 2 GET
     public ObservableList<DriverInfoDB> getDriverInfo(String sql) {                //103
         ObservableList<DriverInfoDB> row = FXCollections.observableArrayList();
@@ -225,7 +226,7 @@ public class DontDelete {
                 + " VALUES('" + ob.getUserID() + "','" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getStartTime() + "','" + ob.getFinalDestination() + "','" + ob.getPickUpPoint() + "');";
         update(sql);
     }
-    
+
     //TABLE 3 GET
     public ObservableList<TourInfoDB> getTourInfo(String sql) {                //103
         ObservableList<TourInfoDB> row = FXCollections.observableArrayList();
@@ -280,7 +281,7 @@ public class DontDelete {
                 + " VALUES('" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getDriverLocation() + "','" + ob.getDriverStatus() + "');";
         update(sql);
     }
-    
+
     //TABLE 4 GET
     public ObservableList<DriverStatusDB> getDriverStatus(String sql) {                //103
         ObservableList<DriverStatusDB> row = FXCollections.observableArrayList();
@@ -377,15 +378,15 @@ public class DontDelete {
         update(sql);
 
     }
-    
+
     //TABLE 6 INSERT
     public void insertMeterInfo(MeterInfoDB ob) {
         String sql = "INSERT INTO METER_INFO "
                 + "VALUES(" + ob.getTourID() + ",'" + ob.getDriverID() + "','" + ob.getCarRegNo() + "','" + ob.getGeneratedCode() + "',"
-                + ob.getTourDistance()+ "," + ob.getIdleTime() + "," + ob.getAmount() + ",'" + ob.getEndTime() + "');";
+                + ob.getTourDistance() + "," + ob.getIdleTime() + "," + ob.getAmount() + ",'" + ob.getEndTime() + "');";
         update(sql);
     }
-    
+
     //TABLE 6 GET
     public ObservableList<MeterInfoDB> getMeterInfo(String sql) {                //103
         ObservableList<MeterInfoDB> row = FXCollections.observableArrayList();
@@ -427,14 +428,14 @@ public class DontDelete {
         update(sql);
 
     }
-    
+
     //TABLE 7 INSERT
     public void insertTourPayment(TourPaymentDB ob) {
         String sql = "INSERT INTO TOUR_PAYMENT "
                 + "VALUES(" + ob.getTourID() + ",'" + ob.getUserID() + "','" + ob.getGeneratedCode() + "','" + ob.getPaymentType() + "'," + ob.getAmount() + ");";
         update(sql);
     }
-    
+
     //TABLE 7 GET
     public ObservableList<TourPaymentDB> getTourPayment(String sql) {                //103
         ObservableList<TourPaymentDB> row = FXCollections.observableArrayList();
@@ -471,6 +472,94 @@ public class DontDelete {
                     .getName()).log(Level.SEVERE, null, ex);
         }
         //closeDatabase();
+
+    }
+
+    public void update3StringDB(String sql, String input1, String input2, String input3, String key) throws SQLException {
+
+        try {
+            PreparedStatement preparedStmt = connection.prepareStatement(sql);
+            preparedStmt.setString(1, input1);
+            preparedStmt.setString(2, input2);
+            preparedStmt.setString(3, input3);
+            preparedStmt.setString(4, key);
+
+            // execute the java preparedstatement
+            preparedStmt.executeUpdate();
+        } catch (Exception e) {
+        }
+
+    }
+
+    public void update3StringDB(String sql, String input1, int input2, String input3, String key1, String key2) {
+        try {
+            PreparedStatement preparedStmt = connection.prepareStatement(sql);
+            preparedStmt.setString(1, input1);
+            preparedStmt.setInt(2, input2);
+            preparedStmt.setString(3, input3);
+            preparedStmt.setString(4, key1);
+            preparedStmt.setString(5, key2);
+
+            // execute the java preparedstatement
+            preparedStmt.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
+    public void update2StringDB(String sql, String input1, String input2, String key1, String key2) throws SQLException {
+
+        try {
+            PreparedStatement preparedStmt = connection.prepareStatement(sql);
+            preparedStmt.setString(1, input1);
+            preparedStmt.setString(2, input2);
+            preparedStmt.setString(3, key1);
+            preparedStmt.setString(4, key2);
+
+            // execute the java preparedstatement
+            preparedStmt.executeUpdate();
+        } catch (Exception e) {
+        }
+
+    }
+
+    public void update4StringDB(String sql, String input1, String input2, String input3, int input4, String key) throws SQLException {
+
+        try {
+            PreparedStatement preparedStmt = connection.prepareStatement(sql);
+            preparedStmt.setString(1, input1);
+            preparedStmt.setString(2, input2);
+            preparedStmt.setString(3, input3);
+            preparedStmt.setInt(4, input4);
+            preparedStmt.setString(5, key);
+
+            // execute the java preparedstatement
+            preparedStmt.executeUpdate();
+        } catch (Exception e) {
+        }
+
+    }
+
+    public void updateUserSearchTaxi(String input1, String input2, String input3, String key) throws SQLException {
+        String sql = "update USER_STATUS set USER_LOCATION =  ? , USER_STATUS =  ? , FINAL_DESTINATION = ? where USER_ID = ? ";
+        update3StringDB(sql, input1, input2, input3, key);
+
+    }
+
+    public void updateUserGotTaxi(String input1, String input2, String input3, int input4, String key) throws SQLException {
+        String sql = "update USER_STATUS set USER_STATUS =  ? , DRIVER_ID = ? , CAR_REG_NO = ? , TOUR_ID = ?  where USER_ID = ? ";
+        update4StringDB(sql, input1, input2, input3, input4, key);
+
+    }
+
+    public void updateTaxiSearchUser(String input1, String input2, String key1, String key2) throws SQLException {
+        String sql = "update DRIVER_STATUS set DRIVER_STATUS = ? , DRIVER_LOCATION = ? where DRIVER_ID = ? AND CAR_REG_NO = ? ";
+        update2StringDB(sql, input1, input2, key1, key2);
+
+    }
+
+    public void updateTaxiGotUser(String input1, int input2, String input3, String key1, String key2) {
+        String sql = "update DRIVER_STATUS set DRIVER_STATUS = ? , TOUR_ID = ? , USER_ID = ? where DRIVER_ID = ? AND CAR_REG_NO = ? ";
+        update3StringDB(sql, input1, input2, input3, key1, key2);
 
     }
 
