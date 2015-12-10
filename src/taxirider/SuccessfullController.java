@@ -11,25 +11,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
 
 /**
  * FXML Controller class
  *
  * @author shadman264
  */
-public class LoginController implements Initializable {
+public class SuccessfullController implements Initializable {
     @FXML
-    private Button LSignUpButt;
-    @FXML
-    private Button LSignInButt;
-    @FXML
-    private RadioButton UserRB;
-    @FXML
-    private ToggleGroup UserDriverTg;
-    @FXML
-    private RadioButton DriverRB;
+    private Button SOkButt;
 
     /**
      * Initializes the controller class.
@@ -40,11 +30,7 @@ public class LoginController implements Initializable {
     }    
 
     @FXML
-    private void LSignUpButtClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void LSignInButtClick(ActionEvent event) {
+    private void SOkButtClick(ActionEvent event) {
     }
     
 }

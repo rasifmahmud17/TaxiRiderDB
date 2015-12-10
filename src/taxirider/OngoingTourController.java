@@ -11,25 +11,30 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
  *
  * @author shadman264
  */
-public class LoginController implements Initializable {
+public class OngoingTourController implements Initializable {
     @FXML
-    private Button LSignUpButt;
+    private Button OTIMakePaymentButt;
     @FXML
-    private Button LSignInButt;
+    private Label OTITourIdL;
     @FXML
-    private RadioButton UserRB;
+    private Label OTIUserIDL;
     @FXML
-    private ToggleGroup UserDriverTg;
+    private Label OTIDriverIDL;
     @FXML
-    private RadioButton DriverRB;
+    private Label OTICarRegNoL;
+    @FXML
+    private Label OTIStartTimeL;
+    @FXML
+    private Label OTIFinalDestinationL;
+    @FXML
+    private Label OTIPickUpPointL;
 
     /**
      * Initializes the controller class.
@@ -40,11 +45,7 @@ public class LoginController implements Initializable {
     }    
 
     @FXML
-    private void LSignUpButtClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void LSignInButtClick(ActionEvent event) {
+    private void OTIMakePaymentButtClick(ActionEvent event) {
     }
     
 }

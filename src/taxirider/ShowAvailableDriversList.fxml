@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxirider.ShowAvailableDriversListController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="59.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label text="DRIVER INFO">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="639.0" prefWidth="1325.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="SDITable" prefHeight="638.0" prefWidth="1301.0">
+              <columns>
+                <TableColumn fx:id="SDIDriverIDTc" prefWidth="90.0" text="DRIVER ID" />
+                <TableColumn fx:id="SDINameTc" prefWidth="149.0" text="NAME" />
+                  <TableColumn fx:id="SDIEmailTc" minWidth="0.0" prefWidth="128.0" text="EMAIL" />
+                  <TableColumn fx:id="SDIMobileNoTc" prefWidth="127.0" text="MOBILE&#10;   NO." />
+                  <TableColumn fx:id="SDILanguageTc" prefWidth="90.0" text="LANGUAGE" />
+                  <TableColumn fx:id="SDICreditCardNoTc" prefWidth="105.0" text=" CREDIT&#10;CARD NO." />
+                  <TableColumn fx:id="SDICvvTc" prefWidth="90.0" text="CVV" />
+                  <TableColumn fx:id="SDIExpirationDateTc" prefWidth="96.0" text="EXPIRATION&#10;     DATE" />
+                  <TableColumn fx:id="SDIAddressTc" prefWidth="116.0" text="ADDRESS" />
+                  <TableColumn fx:id="SDIDrivingLicenseTc" prefWidth="84.0" text="DRIVING&#10;LICENSE" />
+                  <TableColumn fx:id="SDICarRegNoTc" prefWidth="148.0" text="           CAR&#10;REGISTRATION NO." />
+                  <TableColumn fx:id="SDICarModelTc" prefWidth="77.0" text="   CAR&#10;MODEL" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="73.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="SDIBackButt" mnemonicParsing="false" onAction="#SDIBackButtClick" style="-fx-background-color: #252AC2;" text="BACK" textFill="WHITE">
+               <effect>
+                  <Reflection />
+               </effect>
+            </Button>
+         </children>
+         <padding>
+            <Insets right="15.0" />
+         </padding></HBox>
+   </children>
+</VBox>

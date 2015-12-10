@@ -63,7 +63,7 @@
                   </VBox>
                   <VBox VBox.vgrow="ALWAYS">
                      <children>
-                        <Label alignment="TOP_LEFT" prefHeight="65.0" prefWidth="403.0" text="MOBILE NO.                                 :" VBox.vgrow="ALWAYS">
+                        <Label alignment="TOP_LEFT" prefHeight="65.0" prefWidth="403.0" text="RETYPE PASSWORD                     :" VBox.vgrow="ALWAYS">
                            <padding>
                               <Insets left="15.0" top="40.0" />
                            </padding>
@@ -125,27 +125,27 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                <children>
-                  <TextField fx:id="UIEUserIDTextField" VBox.vgrow="ALWAYS">
+                  <TextField fx:id="UIEUserIDTf" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="38.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="UIENameTextField" VBox.vgrow="ALWAYS">
+                  <TextField fx:id="UIENameTf" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="50.0" />
                      </VBox.margin>
                   </TextField>
-                  <PasswordField fx:id="UIEPassword">
+                  <PasswordField fx:id="UIEPasswordTf">
                      <VBox.margin>
                         <Insets top="54.0" />
                      </VBox.margin>
                   </PasswordField>
-                  <TextField fx:id="UIEMobileNoTextField" VBox.vgrow="ALWAYS">
+                  <TextField fx:id="UIERetypePasswordTf" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="53.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="UIECreditCardNoTextField" VBox.vgrow="ALWAYS">
+                  <TextField fx:id="UIECreditCardNoTf" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="50.0" />
                      </VBox.margin>
@@ -155,7 +155,7 @@
                         <Insets top="52.0" />
                      </VBox.margin>
                   </DatePicker>
-                  <TextField fx:id="UIELanguageTextField" VBox.vgrow="ALWAYS">
+                  <TextField fx:id="UIELanguageTf" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="50.0" />
                      </VBox.margin>
@@ -179,6 +179,17 @@
                            </padding>
                            <VBox.margin>
                               <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label alignment="TOP_LEFT" prefHeight="65.0" prefWidth="403.0" text="MOBILE NO.                               :">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets left="15.0" top="40.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
                            </VBox.margin>
                         </Label>
                      </children>
@@ -207,16 +218,21 @@
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <TextField fx:id="UIEEmailTextField" VBox.vgrow="ALWAYS">
+                        <TextField fx:id="UIEEmailTf" VBox.vgrow="ALWAYS">
                            <VBox.margin>
                               <Insets right="15.0" top="38.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="UIEMobileNoTf">
+                           <VBox.margin>
+                              <Insets right="15.0" top="50.0" />
                            </VBox.margin>
                         </TextField>
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <TextField fx:id="UIECvvTextField" VBox.vgrow="ALWAYS">
+                        <TextField fx:id="UIECvvTf" VBox.vgrow="ALWAYS">
                            <VBox.margin>
                               <Insets right="15.0" top="38.0" />
                            </VBox.margin>

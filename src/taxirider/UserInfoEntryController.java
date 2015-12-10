@@ -36,25 +36,17 @@ import taxirider.UserInfoDB;
  */
 public class UserInfoEntryController implements Initializable {
 
-    @FXML
     private TextField UIEUserIDTextField;
-    @FXML
     private TextField UIENameTextField;
-    @FXML
     private PasswordField UIEPassword;
-    @FXML
     private TextField UIEMobileNoTextField;
-    @FXML
     private TextField UIECreditCardNoTextField;
     @FXML
     private DatePicker UIEExpirationDate;
-    @FXML
     private TextField UIELanguageTextField;
     @FXML
     private TextArea UIEAddressTextArea;
-    @FXML
     private TextField UIEEmailTextField;
-    @FXML
     private TextField UIECvvTextField;
     @FXML
     private Button UIESignUpButt;
@@ -63,6 +55,24 @@ public class UserInfoEntryController implements Initializable {
      * Initializes the controller class.
      */
     public static String str = "imran";
+    @FXML
+    private TextField UIEUserIDTf;
+    @FXML
+    private TextField UIENameTf;
+    @FXML
+    private PasswordField UIEPasswordTf;
+    @FXML
+    private TextField UIERetypePasswordTf;
+    @FXML
+    private TextField UIECreditCardNoTf;
+    @FXML
+    private TextField UIELanguageTf;
+    @FXML
+    private TextField UIEEmailTf;
+    @FXML
+    private TextField UIEMobileNoTf;
+    @FXML
+    private TextField UIECvvTf;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
