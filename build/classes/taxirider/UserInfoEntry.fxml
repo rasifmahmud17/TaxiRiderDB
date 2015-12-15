@@ -140,11 +140,11 @@
                         <Insets top="54.0" />
                      </VBox.margin>
                   </PasswordField>
-                  <TextField fx:id="UIERetypePasswordTf" VBox.vgrow="ALWAYS">
+                  <PasswordField fx:id="UIERetypePasswordTf">
                      <VBox.margin>
-                        <Insets top="53.0" />
+                        <Insets top="54.0" />
                      </VBox.margin>
-                  </TextField>
+                  </PasswordField>
                   <TextField fx:id="UIECreditCardNoTf" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="50.0" />
