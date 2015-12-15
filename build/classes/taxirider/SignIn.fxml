@@ -65,11 +65,11 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="300.0">
                <children>
-                  <TextField>
+                  <PasswordField fx:id="SIPassword">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>
-                  </TextField>
+                  </PasswordField>
                </children>
             </HBox>
          </children>

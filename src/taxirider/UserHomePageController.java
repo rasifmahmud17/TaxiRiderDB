@@ -1,9 +1,10 @@
+package taxirider;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package taxirider;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,9 +18,13 @@ import javafx.scene.control.Button;
  *
  * @author shadman264
  */
-public class SuccessfullController implements Initializable {
+public class UserHomePageController implements Initializable {
     @FXML
-    private Button SOkButt;
+    private Button UHPMyToursButt;
+    @FXML
+    private Button UHPProfileButt;
+    @FXML
+    private Button UHPMakeATourButt;
 
     /**
      * Initializes the controller class.
@@ -30,7 +35,15 @@ public class SuccessfullController implements Initializable {
     }    
 
     @FXML
-    private void SOkButtClick(ActionEvent event) {
+    private void UHPMyToursButtClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void UHPProfileButtClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void UHPMakeATourButtClick(ActionEvent event) {
     }
     
 }
